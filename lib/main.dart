@@ -1,8 +1,7 @@
+import 'package:Url/about.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'package:flutter_mobile_vision/flutter_mobile_vision.dart';
 import 'commonui.dart';
-import 'call.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,6 +28,16 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Recharge and Balance checker'),
+          actions: <Widget>[
+            FlatButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                    return About();
+                  }));
+                },
+                icon: Icon(Icons.person),
+                label: Text("About us"))
+          ],
         ),
         body: Container(
             height: MediaQuery.of(context).size.height,
@@ -61,8 +70,7 @@ class _HomeState extends State<Home> {
                         child: Container(
                           child: FittedBox(
                             fit: BoxFit.fill,
-                            child: Image.network(
-                                'https://ictframe.com/wp-content/uploads/Ntc-resumes-international-data-roaming-service.jpg'),
+                            child: Image.asset('images/ntc.jpg'),
                           ),
                           height: MediaQuery.of(context).size.height - 400,
                           width: MediaQuery.of(context).size.width / 2,
@@ -76,8 +84,7 @@ class _HomeState extends State<Home> {
                         child: Container(
                           child: FittedBox(
                             fit: BoxFit.fill,
-                            child: Image.network(
-                                'https://en.setopati.com/wp-content/uploads/2019/05/1552825372Ncell_Main_Logo_1.jpg'),
+                            child: Image.asset('images/ncell.jpg'),
                           ),
                           height: MediaQuery.of(context).size.height - 400,
                           width: MediaQuery.of(context).size.width / 2,
