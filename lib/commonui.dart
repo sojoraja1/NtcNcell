@@ -1,3 +1,4 @@
+import 'package:Url/vision.dart';
 import 'package:flutter/material.dart';
 import './options.dart';
 
@@ -19,6 +20,7 @@ class CommonUI {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Scanner(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
